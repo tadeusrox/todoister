@@ -5,6 +5,13 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
+
+  resources :todoist, only: [] do
+    collection do
+      get 'oauth_request'
+      get 'oauth_response'
+    end
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
